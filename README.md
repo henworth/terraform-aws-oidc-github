@@ -88,7 +88,8 @@ No modules.
 | <a name="input_attach_read_only_policy"></a> [attach\_read\_only\_policy](#input\_attach\_read\_only\_policy) | Flag to enable/disable the attachment of the ReadOnly policy. | `bool` | `true` | no |
 | <a name="input_create_oidc_provider"></a> [create\_oidc\_provider](#input\_create\_oidc\_provider) | Flag to enable/disable the creation of the GitHub OIDC provider. | `bool` | `true` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to enable/disable the creation of resources. | `bool` | `true` | no |
-| <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | Flag to force detachment of policies attached to the IAM role. | `string` | `false` | no |
+| <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | Flag to force detachment of policies attached to the IAM role. | `bool` | `false` | no |
+| <a name="input_git_reference"></a> [git\_reference](#input\_git\_reference) | Any properly formatted git commit reference to add to the filter policy | `string` | `"*"` | no |
 | <a name="input_github_organisation"></a> [github\_organisation](#input\_github\_organisation) | GitHub organisation name. | `string` | n/a | yes |
 | <a name="input_github_repositories"></a> [github\_repositories](#input\_github\_repositories) | List of GitHub repository names. | `list(string)` | n/a | yes |
 | <a name="input_github_thumbprint"></a> [github\_thumbprint](#input\_github\_thumbprint) | GitHub OpenID TLS certificate thumbprint. | `string` | `"6938fd4d98bab03faadb97b34396831e3780aea1"` | no |
