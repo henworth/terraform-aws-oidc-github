@@ -14,5 +14,10 @@
 
 output "iam_role_arn" {
   description = "ARN of the IAM role."
-  value       = aws_iam_role.github[0].arn
+  value       = try(aws_iam_role.github[0].arn, null)
+}
+
+output "iam_openid_connect_provider_arn" {
+  description = "ARN of the OIDC provider."
+  value       = local.oidc_provider.arn
 }

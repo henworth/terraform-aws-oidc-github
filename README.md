@@ -87,6 +87,7 @@ No modules.
 | <a name="input_attach_admin_policy"></a> [attach\_admin\_policy](#input\_attach\_admin\_policy) | Flag to enable/disable the attachment of the AdministratorAccess policy. | `bool` | `false` | no |
 | <a name="input_attach_read_only_policy"></a> [attach\_read\_only\_policy](#input\_attach\_read\_only\_policy) | Flag to enable/disable the attachment of the ReadOnly policy. | `bool` | `true` | no |
 | <a name="input_create_oidc_provider"></a> [create\_oidc\_provider](#input\_create\_oidc\_provider) | Flag to enable/disable the creation of the GitHub OIDC provider. | `bool` | `true` | no |
+| <a name="input_create_role"></a> [create\_role](#input\_create\_role) | Flag to enable/disable the creation of the IAM role. | `bool` | `true` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to enable/disable the creation of resources. | `bool` | `true` | no |
 | <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | Flag to force detachment of policies attached to the IAM role. | `bool` | `false` | no |
 | <a name="input_git_reference"></a> [git\_reference](#input\_git\_reference) | Any properly formatted git commit reference to add to the filter policy | `string` | `"*"` | no |
@@ -106,6 +107,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_iam_openid_connect_provider_arn"></a> [iam\_openid\_connect\_provider\_arn](#output\_iam\_openid\_connect\_provider\_arn) | ARN of the OIDC provider. |
 | <a name="output_iam_role_arn"></a> [iam\_role\_arn](#output\_iam\_role\_arn) | ARN of the IAM role. |
 <!-- END_TF_DOCS -->
 

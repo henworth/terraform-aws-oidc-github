@@ -19,7 +19,7 @@ locals {
 }
 
 resource "aws_iam_role" "github" {
-  count = var.enabled ? 1 : 0
+  count = var.enabled && var.create_role ? 1 : 0
 
   assume_role_policy    = data.aws_iam_policy_document.assume_role[0].json
   description           = "Role used by the ${var.github_organisation} GitHub organisation."
@@ -28,7 +28,8 @@ resource "aws_iam_role" "github" {
   name                  = var.iam_role_name
   path                  = var.iam_role_path
   permissions_boundary  = var.iam_role_permissions_boundary
-  tags                  = var.tags
+
+  tags = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "admin" {
@@ -56,7 +57,8 @@ resource "aws_iam_openid_connect_provider" "github" {
   count = var.enabled && var.create_oidc_provider ? 1 : 0
 
   client_id_list  = ["https://github.com/${var.github_organisation}", "sts.amazonaws.com"]
-  tags            = var.tags
   thumbprint_list = [var.github_thumbprint]
   url             = "https://token.actions.githubusercontent.com"
+
+  tags = var.tags
 }
