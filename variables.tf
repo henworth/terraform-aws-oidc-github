@@ -39,6 +39,12 @@ variable "enabled" {
 variable "force_detach_policies" {
   default     = false
   description = "Flag to force detachment of policies attached to the IAM role."
+  type        = bool
+}
+
+variable "git_reference" {
+  default     = "*"
+  description = "Any properly formatted git commit reference to add to the filter policy"
   type        = string
 }
 
