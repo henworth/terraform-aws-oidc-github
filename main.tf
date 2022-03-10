@@ -15,7 +15,7 @@
 locals {
   partition = data.aws_partition.current.partition
 
-  oidc_provider = var.create_oidc_provider ? aws_iam_openid_connect_provider.github[0] : data.aws_iam_openid_connect_provider.github[0]
+  oidc_provider_arn = var.create_oidc_provider ? aws_iam_openid_connect_provider.github[0].arn : data.aws_iam_openid_connect_provider.github[0].arn
 }
 
 resource "aws_iam_role" "github" {

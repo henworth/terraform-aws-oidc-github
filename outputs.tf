@@ -19,5 +19,5 @@ output "iam_role_arn" {
 
 output "iam_openid_connect_provider_arn" {
   description = "ARN of the OIDC provider."
-  value       = local.oidc_provider.arn
+  value       = local.oidc_provider_arn
 }
